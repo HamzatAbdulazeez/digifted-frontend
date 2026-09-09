@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digifted Hub — Header Prototype (Book Now + Buy Media)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800;900&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#E3162A;
+    --red-deep:#B8101F;
+    --navy:#122B57;
+    --navy-deep:#0A1B3B;
+    --paper:#F6F4EF;
+    --paper-dim:#EDEAE2;
+    --ink:#1A1A1A;
+    --mute:#6E7480;
+    --line:#DAD5C8;
+    --white:#FFFFFF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  .display{font-family:'Archivo', sans-serif; font-weight:900; letter-spacing:-0.02em;}
+  .mono{font-family:'IBM Plex Mono', monospace; letter-spacing:0.08em; text-transform:uppercase;}
+  .wrap{max-width:1280px; margin:0 auto; padding:0 32px;}
+
+  /* ---------- Header (matches approved homepage brand system) ---------- */
+  header.main{
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    position:sticky; top:0; z-index:50;
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:16px; padding-bottom:16px; gap:24px;
+  }
+  .logo{font-family:'Archivo',sans-serif; font-weight:900; font-size:20px; color:var(--navy); white-space:nowrap;}
+  .logo span{color:var(--red);}
+
+  .nav-links{display:flex; gap:22px; align-items:center; flex-wrap:wrap;}
+  .nav-links a{
+    font-size:15.5px; font-weight:600; color:var(--navy);
+    position:relative; padding:4px 0; white-space:nowrap;
+  }
+  .nav-links a::after{
+    content:''; position:absolute; left:0; bottom:-2px; width:0; height:2px;
+    background:var(--red); transition:width .25s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+
+  .header-actions{display:flex; align-items:center; gap:10px;}
+
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'IBM Plex Mono', monospace; font-size:12.5px; font-weight:600;
+    letter-spacing:0.06em; text-transform:uppercase;
+    padding:12px 20px; border-radius:2px; border:2px solid transparent;
+    cursor:pointer; transition:transform .15s ease, box-shadow .15s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-2px);}
+
+  /* Book Now — navy solid (existing brand action color) */
+  .btn-navy{background:var(--navy); color:var(--white);}
+  .btn-navy:hover{box-shadow:0 8px 20px rgba(18,43,87,0.35); background:var(--navy-deep);}
+
+  /* Buy Media — red solid (was "Download Now"), placed immediately beside Book Now */
+  .btn-red{background:var(--red); color:var(--white);}
+  .btn-red:hover{box-shadow:0 8px 20px rgba(227,22,42,0.35); background:var(--red-deep);}
+
+  .menu-toggle{display:none; background:none; border:none; cursor:pointer; padding:6px;}
+  .menu-toggle span{display:block; width:24px; height:2px; background:var(--navy); margin:5px 0; transition:.2s;}
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 980px){
+    .nav-links{
+      position:fixed; top:0; right:-320px; height:100vh; width:300px;
+      background:var(--navy-deep); flex-direction:column; align-items:flex-start;
+      padding:90px 32px 32px; gap:20px; transition:right .3s ease; z-index:60;
+    }
+    .nav-links.open{right:0;}
+    .nav-links a{color:#fff;}
+    .nav-links a::after{background:var(--red);}
+    .header-actions .btn-label{display:none;}
+    .menu-toggle{display:block;}
+    .header-actions{gap:8px;}
+    .btn{padding:10px 14px; font-size:11.5px;}
+    .overlay{
+      display:none; position:fixed; inset:0; background:rgba(0,0,0,.5); z-index:55;
+    }
+    .overlay.open{display:block;}
+  }
+
+  /* demo body content, not part of the deliverable */
+  main.demo{padding:60px 0; text-align:center;}
+  main.demo h1{font-size:clamp(28px,4vw,42px); color:var(--navy); margin-bottom:12px;}
+  main.demo p{color:var(--mute);}
+</style>
+</head>
+<body>
+
+<header class="main">
+  <div class="wrap">
+    <nav class="wrap" style="padding:16px 0; max-width:none;">
+      <a href="/" class="logo"><img src="logo.png" alt="Digifted Hub" style="height:34px;"></a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/services">Our Services</a>
+        <a href="/studios">Studios</a>
+        <a href="/pricing">Rental Pricing</a>
+        <a href="/live-events">Live &amp; Events</a>
+        <a href="/business-solutions">Business Solutions</a>
+        <a href="/contact">Contact Us</a>
+      </div>
+
+      <div class="header-actions">
+        <a href="/book-now" class="btn btn-navy"><span class="btn-label">Book Now</span></a>
+        <a href="/buy-media" class="btn btn-red"><span class="btn-label">Buy Media</span></a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="overlay" id="overlay"></div>
+
+<main class="demo wrap">
+  <h1>Header Prototype — Phase 1</h1>
+  <p>"Buy Media" replaces "Download Now" and sits immediately beside "Book Now."<br>
+  Resize the window or view on mobile to see the responsive menu.</p>
+</main>
+
+<script>
+  const navLinks = document.getElementById('navLinks');
+  const menuToggle = document.getElementById('menuToggle');
+  const overlay = document.getElementById('overlay');
+
+  function toggleMenu() {
+    navLinks.classList.toggle('open');
+    overlay.classList.toggle('open');
+  }
+  menuToggle.addEventListener('click', toggleMenu);
+  overlay.addEventListener('click', toggleMenu);
+</script>
+
+</body>
+</html>

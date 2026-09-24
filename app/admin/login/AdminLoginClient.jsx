@@ -43,7 +43,7 @@ export default function AdminLoginClient() {
               {error && <p className="text-red-500 text-sm">{error}</p>}
               <button type="submit" disabled={status === "sending"} className="btn-red w-full justify-center disabled:opacity-60">{status === "sending" ? "Signing in…" : "Sign In"}</button>
             </form>
-            <p className="text-xs text-navy-400 mt-6 text-center">First run? A default admin account is seeded — see the README for credentials.</p>
+            <p className="text-xs text-navy-400 mt-6 text-center">First run? A default admin account is seeded.</p>
           </div>
         </div>
       </section>

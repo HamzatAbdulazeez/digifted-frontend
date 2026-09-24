@@ -2,16 +2,11 @@ import Link from "next/link";
 import { Play, ArrowRight } from "lucide-react";
 
 const departments = [
-  { tag: "STU", title: "Studios", href: "/studios",
-    desc: "Podcast, photo & video spaces with 4K recording, built for creators." },
-  { tag: "LIV", title: "Live & Events", href: "/live-events",
-    desc: "Multi-camera livestreaming and full event coverage, on-site and online." },
-  { tag: "COR", title: "Business Solutions", href: "/business-solutions",
-    desc: "Executive spaces, brand videos and documentary ads for growing businesses." },
-  { tag: "DIG", title: "Digital Marketing", href: "/services",
-    desc: "Social strategy, paid ads and analytics that grow your digital footprint." },
-  { tag: "CRE", title: "Creative Services", href: "/services",
-    desc: "Editing, retouching and mastering that turns good content into great." },
+  { tag: "STU", title: "Studios", href: "/studios", desc: "Podcast, photo & video spaces with 4K recording, built for creators." },
+  { tag: "LIV", title: "Live & Events", href: "/live-events", desc: "Multi-camera livestreaming and full event coverage, on-site and online." },
+  { tag: "COR", title: "Business Solutions", href: "/business-solutions", desc: "Executive spaces, brand videos and documentary ads for growing businesses." },
+  { tag: "DIG", title: "Digital Marketing", href: "/services", desc: "Social strategy, paid ads and analytics that grow your digital footprint." },
+  { tag: "CRE", title: "Creative Services", href: "/services", desc: "Editing, retouching and mastering that turns good content into great." },
 ];
 
 const testimonials = [
@@ -31,7 +26,6 @@ const portfolioImages = [
 export default function Home() {
   return (
     <>
-      {/* Hero */}
       <section className="relative overflow-hidden bg-paper">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(227,22,42,0.06),transparent_50%)]" />
         <div className="relative max-w-7xl mx-auto px-6 md:px-8 py-20 md:py-28 grid md:grid-cols-2 gap-14 items-center">
@@ -53,9 +47,7 @@ export default function Home() {
           <div className="relative aspect-[4/5] rounded-lg overflow-hidden bg-gradient-to-br from-navy to-navy-700 shadow-2xl">
             <div className="absolute top-4 left-4 w-8 h-8 border-t-[3px] border-l-[3px] border-red-500" />
             <div className="absolute bottom-4 right-4 w-8 h-8 border-b-[3px] border-r-[3px] border-red-500" />
-            <div className="absolute top-4 left-16 flex items-center gap-1.5 text-white text-xs font-mono">
-              <span className="rec-dot" />REC
-            </div>
+            <div className="absolute top-4 left-16 flex items-center gap-1.5 text-white text-xs font-mono"><span className="rec-dot" />REC</div>
             <div className="absolute inset-0 flex items-center justify-center p-10 text-center text-white/50 text-sm bg-[repeating-linear-gradient(45deg,rgba(255,255,255,0.035)_0_2px,transparent_2px_14px)]">
               <div>
                 <span className="block font-display font-black text-base text-white/85 mb-2 tracking-wide">STUDIO FEED — 04</span>
@@ -66,42 +58,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Departments */}
       <section className="bg-paper-dim border-y border-black/10">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5">
           {departments.map((d, i) => (
-            <Link
-              key={d.tag}
-              href={d.href}
-              className={`group p-8 border-black/10 hover:bg-white transition ${i < departments.length - 1 ? "md:border-r" : ""} border-b md:border-b-0`}
-            >
+            <Link key={d.tag} href={d.href} className={`group p-8 border-black/10 hover:bg-white transition ${i < departments.length - 1 ? "md:border-r" : ""} border-b md:border-b-0`}>
               <span className="font-mono text-xs text-red-500 border-b-2 border-red-500 pb-1 inline-block mb-4">{d.tag}</span>
               <h3 className="font-display font-extrabold text-lg text-navy mb-2">{d.title}</h3>
               <p className="text-sm text-navy-400">{d.desc}</p>
-              <div className="mt-4 flex items-center gap-1 text-sm font-semibold text-navy group-hover:text-red-500 transition">
-                Learn more <ArrowRight size={14} />
-              </div>
+              <div className="mt-4 flex items-center gap-1 text-sm font-semibold text-navy group-hover:text-red-500 transition">Learn more <ArrowRight size={14} /></div>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* On Air / YouTube */}
       <section className="bg-navy-700 text-white py-24">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <div className="max-w-xl mb-14">
-            <div className="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-red-500 mb-4">
-              <span className="rec-dot" />On Air
-            </div>
+            <div className="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-red-500 mb-4"><span className="rec-dot" />On Air</div>
             <h2 className="font-display font-black text-3xl md:text-4xl">Watch us in action</h2>
             <p className="text-white/60 mt-3">Behind-the-scenes footage, client shoots and event highlights — straight from our channel.</p>
           </div>
           <div className="grid lg:grid-cols-[1.4fr_1fr] gap-7">
-            <a
-              href="https://www.youtube.com/@DigiftedStudio"
-              target="_blank" rel="noopener noreferrer"
-              className="relative aspect-video rounded-lg bg-navy overflow-hidden flex items-center justify-center group"
-            >
+            <a href="https://www.youtube.com/@DigiftedStudio" target="_blank" rel="noopener noreferrer" className="relative aspect-video rounded-lg bg-navy overflow-hidden flex items-center justify-center group">
               <div className="w-16 h-16 rounded-full bg-red-500 flex items-center justify-center group-hover:scale-110 transition">
                 <Play size={22} className="text-white fill-white ml-0.5" />
               </div>
@@ -121,13 +99,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why choose us */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <div className="max-w-xl mb-14">
-            <div className="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-red-500 mb-4">
-              <span className="rec-dot" />Our Core Values
-            </div>
+            <div className="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-red-500 mb-4"><span className="rec-dot" />Our Core Values</div>
             <h2 className="font-display font-black text-3xl md:text-4xl text-navy">Built for creators who don&apos;t cut corners</h2>
             <p className="text-navy-400 mt-3">We merge creativity with technology to help individuals and brands communicate their stories powerfully.</p>
           </div>
@@ -147,30 +122,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Portfolio */}
       <section className="pb-24">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <div className="max-w-xl mb-14">
-            <div className="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-red-500 mb-4">
-              <span className="rec-dot" />Portfolio
-            </div>
+            <div className="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-red-500 mb-4"><span className="rec-dot" />Portfolio</div>
             <h2 className="font-display font-black text-3xl md:text-4xl text-navy">Recent work</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-            {portfolioImages.map((src) => (
-              <div key={src} className="aspect-square rounded-lg bg-cover bg-center" style={{ backgroundImage: `url('${src}')` }} />
-            ))}
+            {portfolioImages.map((src) => <div key={src} className="aspect-square rounded-lg bg-cover bg-center" style={{ backgroundImage: `url('${src}')` }} />)}
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
       <section className="pb-24">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <div className="max-w-xl mb-14">
-            <div className="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-red-500 mb-4">
-              <span className="rec-dot" />Testimonials
-            </div>
+            <div className="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-red-500 mb-4"><span className="rec-dot" />Testimonials</div>
             <h2 className="font-display font-black text-3xl md:text-4xl text-navy">What our clients say</h2>
           </div>
           <div className="bg-navy rounded-lg p-10 md:p-14 text-white mb-8">
@@ -178,7 +145,7 @@ export default function Home() {
             <p className="text-xl md:text-2xl font-medium max-w-2xl">{testimonials[0].text}</p>
             <div className="mt-6 text-white/60"><b className="text-white">{testimonials[0].name}</b> — Digifted Hub Client</div>
           </div>
-          <div className="grid sm:grid-cols-2 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {testimonials.slice(1).map((t) => (
               <div key={t.name} className="bg-white border border-black/10 rounded-lg p-6 hover:shadow-card transition">
                 <p className="text-navy-400 text-sm mb-4">&ldquo;{t.text}&rdquo;</p>
@@ -189,7 +156,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="bg-red-500 text-white text-center py-20">
         <div className="max-w-2xl mx-auto px-6">
           <h2 className="font-display font-black text-3xl md:text-4xl mb-4">Ready to bring your vision to life?</h2>

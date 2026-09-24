@@ -1,7 +1,6 @@
 import "./globals.css";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
-import WhatsAppChatButton from "../components/layout/WhatsAppChatButton";
 
 export const metadata = {
   title: "Digifted Hub — Your Vision, Amplified",
@@ -16,7 +15,6 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <Footer />
-        <WhatsAppChatButton />
       </body>
     </html>
   );

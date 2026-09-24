@@ -10,21 +10,13 @@ const values = [
   ["Innovation", "Pushing creative boundaries with cutting-edge solutions."],
   ["Integrity", "Building trust through honest and transparent practices."],
 ];
-
 const timeline = [
   ["Year One", "Started our journey with a vision to transform creative production in Nigeria."],
   ["Growth", "Opened our state-of-the-art recording and production facility."],
   ["Expansion", "Launched comprehensive digital marketing and live streaming services."],
   ["Today", "Became a leading creative hub serving 100+ clients across Africa."],
 ];
-
-const stats = [
-  ["100+", "Projects Completed"],
-  ["100+", "Happy Clients"],
-  ["25+", "Creative Experts"],
-  ["5+", "Years of Experience"],
-];
-
+const stats = [["100+", "Projects Completed"], ["100+", "Happy Clients"], ["25+", "Creative Experts"], ["5+", "Years of Experience"]];
 const achievements = [
   ["Award-Winning Productions", "Recognized for excellence in multimedia content creation."],
   ["Industry Partnerships", "Trusted partner for major brands and corporations."],
@@ -35,13 +27,7 @@ const achievements = [
 export default function AboutPage() {
   return (
     <>
-      <PageBanner
-        crumb="About Us"
-        title={<>We don&apos;t just create content —<br />we craft experiences.</>}
-        desc="That connect, engage, and inspire. Get to know the team and story behind Digifted Hub."
-      />
-
-      {/* Mission & Vision */}
+      <PageBanner crumb="About Us" title={<>We don&apos;t just create content —<br />we craft experiences.</>} desc="That connect, engage, and inspire. Get to know the team and story behind Digifted Hub." />
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6 md:px-8 grid md:grid-cols-2 gap-14 items-center">
           <div className="relative aspect-[4/3] rounded-lg bg-gradient-to-br from-navy to-navy-700 flex items-center justify-center text-white/50 text-sm text-center p-8">
@@ -51,24 +37,14 @@ export default function AboutPage() {
           </div>
           <div>
             <span className="font-mono text-xs tracking-widest uppercase text-red-500">Our Mission</span>
-            <h3 className="font-display font-extrabold text-2xl md:text-3xl text-navy mt-2 mb-4">
-              Empowering stories through world-class production.
-            </h3>
-            <p className="text-navy-400 mb-8">
-              We exist to give creators, businesses, and brands in Lagos and beyond the studios, crews, and creative direction to tell their stories at the highest level — without leaving the city.
-            </p>
+            <h3 className="font-display font-extrabold text-2xl md:text-3xl text-navy mt-2 mb-4">Empowering stories through world-class production.</h3>
+            <p className="text-navy-400 mb-8">We exist to give creators, businesses, and brands in Lagos and beyond the studios, crews, and creative direction to tell their stories at the highest level — without leaving the city.</p>
             <span className="font-mono text-xs tracking-widest uppercase text-red-500">Our Vision</span>
-            <h3 className="font-display font-extrabold text-2xl md:text-3xl text-navy mt-2 mb-4">
-              Africa&apos;s most trusted creative ecosystem.
-            </h3>
-            <p className="text-navy-400">
-              One roof, five departments — studios, live events, corporate media, digital marketing and post-production — so no vision is ever too big to capture.
-            </p>
+            <h3 className="font-display font-extrabold text-2xl md:text-3xl text-navy mt-2 mb-4">Africa&apos;s most trusted creative ecosystem.</h3>
+            <p className="text-navy-400">One roof, five departments — studios, live events, corporate media, digital marketing and post-production — so no vision is ever too big to capture.</p>
           </div>
         </div>
       </section>
-
-      {/* Core values */}
       <section className="py-24 bg-paper-dim">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <SectionHead eyebrow="Our Core Values" title="What Sets Us Apart" center />
@@ -82,8 +58,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* Journey timeline */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <SectionHead eyebrow="Our Journey" title="How we got here" />
@@ -98,8 +72,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* Achievements + stats */}
       <section className="py-24 bg-navy-700 text-white">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <SectionHead eyebrow="Our Achievements" title="Why Clients Choose Us" light />
@@ -121,7 +93,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
       <section className="bg-red-500 text-white text-center py-20">
         <div className="max-w-2xl mx-auto px-6">
           <h2 className="font-display font-black text-3xl md:text-4xl mb-4">Want to work with our team?</h2>

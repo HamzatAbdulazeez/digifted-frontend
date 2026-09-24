@@ -5,21 +5,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@600;800;900&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
 
 @layer base {
-  body {
-    @apply bg-paper text-[#1A1A1A] font-body antialiased;
-  }
-  ::selection {
-    @apply bg-red-500 text-white;
-  }
+  body { @apply bg-paper text-[#1A1A1A] font-body antialiased; }
+  ::selection { @apply bg-red-500 text-white; }
 }
-
 @layer components {
-  .rec-dot {
-    @apply w-[7px] h-[7px] rounded-full bg-red-500 inline-block relative -top-px animate-pulse;
-  }
-  .btn {
-    @apply inline-flex items-center gap-2 font-mono text-[12.5px] font-semibold tracking-wider uppercase px-5 py-3 rounded-sm border-2 border-transparent cursor-pointer transition-transform hover:-translate-y-0.5;
-  }
+  .rec-dot { @apply w-[7px] h-[7px] rounded-full bg-red-500 inline-block relative -top-px animate-pulse; }
+  .btn { @apply inline-flex items-center gap-2 font-mono text-[12.5px] font-semibold tracking-wider uppercase px-5 py-3 rounded-sm border-2 border-transparent cursor-pointer transition-transform hover:-translate-y-0.5; }
   .btn-red { @apply btn bg-red-500 text-white hover:shadow-glow; }
   .btn-navy { @apply btn bg-navy text-white hover:shadow-[0_8px_20px_rgba(18,43,87,0.35)]; }
   .btn-outline { @apply btn bg-transparent text-navy border-navy hover:bg-navy hover:text-white; }

@@ -21,7 +21,7 @@ export default function BusinessSolutionsPage() {
     <>
       <PageBanner crumb="Business Solutions" title="Digifted Corporate Solutions" desc="Your partner in professional communication — where creativity meets corporate professionalism." />
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="Resizer mx-auto px-6 md:px-8">
           <SectionHead eyebrow="Our Business Solutions" title="Media that moves your business forward" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map(([Icon, title, desc]) => (
@@ -35,7 +35,7 @@ export default function BusinessSolutionsPage() {
         </div>
       </section>
       <section className="py-24 bg-paper-dim">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="Resizer mx-auto px-6 md:px-8">
           <SectionHead eyebrow="Industries We Serve" title="Built for businesses like yours" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {industries.map((name) => <div key={name} className="bg-white border border-black/10 rounded-lg p-6"><h4 className="font-display font-extrabold text-navy text-[16.5px]">{name}</h4></div>)}
@@ -43,7 +43,7 @@ export default function BusinessSolutionsPage() {
         </div>
       </section>
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="Resizer mx-auto px-6 md:px-8">
           <SectionHead eyebrow="Our Process" title="From discovery to results" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 border border-black/10 rounded-lg overflow-hidden">
             {process.map(([num, title, desc], i) => (
@@ -57,7 +57,7 @@ export default function BusinessSolutionsPage() {
         </div>
       </section>
       <section className="py-24 bg-navy-700 text-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="Resizer mx-auto px-6 md:px-8">
           <SectionHead eyebrow="Client Success Stories" title="Results-Driven Approach" light />
           <div className="grid sm:grid-cols-3 gap-8 text-center mb-16">
             {[["250%", "Engagement Increase"], ["45+", "Events Produced"], ["180%", "ROI Growth"]].map(([num, label]) => (

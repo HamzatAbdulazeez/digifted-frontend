@@ -24,7 +24,7 @@ export default function LiveEventsPage() {
     <>
       <PageBanner crumb="Live & Events" title="Digifted Live & Events" desc="Multi-camera livestreaming and full event coverage, on-site and online — from stage to screen." />
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="Resizer mx-auto px-6 md:px-8">
           <SectionHead eyebrow="Our Event Services" title="Coverage that captures every moment" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map(([Icon, title, desc]) => (
@@ -38,7 +38,7 @@ export default function LiveEventsPage() {
         </div>
       </section>
       <section className="py-24 bg-paper-dim">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="Resizer mx-auto px-6 md:px-8">
           <SectionHead eyebrow="Events We Cover" title="Every kind of moment, covered" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {events.map(([title, desc]) => (
@@ -48,7 +48,7 @@ export default function LiveEventsPage() {
         </div>
       </section>
       <section className="py-24 bg-navy-700 text-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="Resizer mx-auto px-6 md:px-8">
           <SectionHead eyebrow="Why Digifted Hub" title="Why Choose Digifted Hub for Your Events?" light />
           <div className="grid sm:grid-cols-3 gap-8">
             {[["Technical Excellence", "Broadcast-grade equipment and a crew that knows how to run it under pressure."], ["Expert Team", "Producers and technicians who've covered everything from AGMs to concerts."], ["Proven Track Record", "A track record of flawless execution across dozens of live events."]].map(([title, desc]) => (

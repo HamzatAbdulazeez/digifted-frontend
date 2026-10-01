@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function PageBanner({ crumb, title, desc }) {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-navy to-navy-700 text-white py-16 md:py-20">
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
+      <div className="Resizer mx-auto px-6 md:px-8">
         <div className="text-sm text-white/60 mb-4">
           <Link href="/" className="hover:text-white transition">Home</Link> / {crumb}
         </div>

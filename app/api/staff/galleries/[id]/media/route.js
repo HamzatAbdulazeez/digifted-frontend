@@ -2,6 +2,16 @@ import { NextResponse } from "next/server";
 import db from "../../../../../../lib/db";
 import { getCurrentUser, requireRole } from "../../../../../../lib/auth";
 
+export async function GET(request, { params }) {
+  const user = getCurrentUser();
+  if (!requireRole(user, ["staff", "admin"])) {
+    return NextResponse.json({ message: "Staff access only." }, { status: 403 });
+  }
+
+  const media = db.prepare("SELECT * FROM media WHERE galleryId = ? ORDER BY createdAt DESC").all(params.id);
+  return NextResponse.json({ data: media });
+}
+
 export async function POST(request, { params }) {
   const user = getCurrentUser();
   if (!requireRole(user, ["staff", "admin"])) {
@@ -22,7 +32,6 @@ export async function POST(request, { params }) {
     )
     .run(gallery.id, type || "image", cloudinary_public_id, url, thumbnail_url || url);
 
-  // First upload becomes the album's storefront cover image.
   if (!gallery.coverImage) {
     db.prepare("UPDATE galleries SET coverImage = ? WHERE id = ?").run(url, gallery.id);
   }

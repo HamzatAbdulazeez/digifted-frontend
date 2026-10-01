@@ -29,7 +29,7 @@ export default function AboutPage() {
     <>
       <PageBanner crumb="About Us" title={<>We don&apos;t just create content —<br />we craft experiences.</>} desc="That connect, engage, and inspire. Get to know the team and story behind Digifted Hub." />
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-8 grid md:grid-cols-2 gap-14 items-center">
+        <div className="Resizer mx-auto px-6 md:px-8 grid md:grid-cols-2 gap-14 items-center">
           <div className="relative aspect-[4/3] rounded-lg bg-gradient-to-br from-navy to-navy-700 flex items-center justify-center text-white/50 text-sm text-center p-8">
             <div className="absolute top-4 left-4 w-7 h-7 border-t-[3px] border-l-[3px] border-red-500" />
             <div className="absolute bottom-4 right-4 w-7 h-7 border-b-[3px] border-r-[3px] border-red-500" />
@@ -46,7 +46,7 @@ export default function AboutPage() {
         </div>
       </section>
       <section className="py-24 bg-paper-dim">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="Resizer mx-auto px-6 md:px-8">
           <SectionHead eyebrow="Our Core Values" title="What Sets Us Apart" center />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map(([title, desc]) => (
@@ -59,7 +59,7 @@ export default function AboutPage() {
         </div>
       </section>
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="Resizer mx-auto px-6 md:px-8">
           <SectionHead eyebrow="Our Journey" title="How we got here" />
           <div className="relative pl-8 border-l-2 border-paper-dim max-w-2xl">
             {timeline.map(([year, text], i) => (
@@ -73,7 +73,7 @@ export default function AboutPage() {
         </div>
       </section>
       <section className="py-24 bg-navy-700 text-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="Resizer mx-auto px-6 md:px-8">
           <SectionHead eyebrow="Our Achievements" title="Why Clients Choose Us" light />
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center mb-16">
             {stats.map(([num, label]) => (

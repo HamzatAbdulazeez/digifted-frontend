@@ -28,7 +28,7 @@ export default function StudiosPage() {
     <>
       <PageBanner crumb="Studios" title="Digifted Studios" desc="Podcast booths, music production, and photoshoot spaces built for creators — equipped with the latest technology." />
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="Resizer mx-auto px-6 md:px-8">
           <SectionHead eyebrow="Our Studio Services" title="Everything under one roof" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map(([Icon, title, desc]) => (
@@ -42,7 +42,7 @@ export default function StudiosPage() {
         </div>
       </section>
       <section className="py-24 bg-paper-dim">
-        <div className="max-w-7xl mx-auto px-6 md:px-8 grid md:grid-cols-2 gap-14 items-center">
+        <div className="Resizer mx-auto px-6 md:px-8 grid md:grid-cols-2 gap-14 items-center">
           <div className="md:order-2 relative aspect-[4/3] rounded-lg bg-gradient-to-br from-navy to-navy-700 flex items-center justify-center text-white/50 text-sm text-center p-8">
             <div className="absolute top-4 left-4 w-7 h-7 border-t-[3px] border-l-[3px] border-red-500" />
             <div className="absolute bottom-4 right-4 w-7 h-7 border-b-[3px] border-r-[3px] border-red-500" />
@@ -58,7 +58,7 @@ export default function StudiosPage() {
         </div>
       </section>
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="Resizer mx-auto px-6 md:px-8">
           <SectionHead eyebrow="Studio Features & Facilities" title="Why Choose Our Studio?" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map(([title, desc]) => (
@@ -71,7 +71,7 @@ export default function StudiosPage() {
         </div>
       </section>
       <section className="py-24 bg-navy-700 text-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="Resizer mx-auto px-6 md:px-8">
           <SectionHead eyebrow="Why Book With Us" title="Creative Freedom, Latest Technology, Professional Support" light />
           <div className="grid sm:grid-cols-3 gap-8">
             {[["Creative Freedom", "Space and equipment shaped around your vision, not the other way around."], ["Latest Technology", "4K/8K cameras and industry-standard gear, always kept current."], ["Professional Support", "A crew on hand whenever you need an extra pair of expert hands."]].map(([title, desc]) => (

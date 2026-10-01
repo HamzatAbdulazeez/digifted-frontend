@@ -28,7 +28,7 @@ export default function Home() {
     <>
       <section className="relative overflow-hidden bg-paper">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(227,22,42,0.06),transparent_50%)]" />
-        <div className="relative max-w-7xl mx-auto px-6 md:px-8 py-20 md:py-28 grid md:grid-cols-2 gap-14 items-center">
+        <div className="relative Resizer mx-auto px-6 md:px-8 py-20 md:py-28 grid md:grid-cols-2 gap-14 items-center">
           <div>
             <div className="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-navy mb-6">
               <span className="rec-dot" />Lagos Creative Production House
@@ -59,7 +59,7 @@ export default function Home() {
       </section>
 
       <section className="bg-paper-dim border-y border-black/10">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5">
+        <div className="Resizer mx-auto grid grid-cols-2 md:grid-cols-5">
           {departments.map((d, i) => (
             <Link key={d.tag} href={d.href} className={`group p-8 border-black/10 hover:bg-white transition ${i < departments.length - 1 ? "md:border-r" : ""} border-b md:border-b-0`}>
               <span className="font-mono text-xs text-red-500 border-b-2 border-red-500 pb-1 inline-block mb-4">{d.tag}</span>
@@ -72,7 +72,7 @@ export default function Home() {
       </section>
 
       <section className="bg-navy-700 text-white py-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="Resizer mx-auto px-6 md:px-8">
           <div className="max-w-xl mb-14">
             <div className="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-red-500 mb-4"><span className="rec-dot" />On Air</div>
             <h2 className="font-display font-black text-3xl md:text-4xl">Watch us in action</h2>
@@ -100,7 +100,7 @@ export default function Home() {
       </section>
 
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="Resizer mx-auto px-6 md:px-8">
           <div className="max-w-xl mb-14">
             <div className="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-red-500 mb-4"><span className="rec-dot" />Our Core Values</div>
             <h2 className="font-display font-black text-3xl md:text-4xl text-navy">Built for creators who don&apos;t cut corners</h2>
@@ -123,7 +123,7 @@ export default function Home() {
       </section>
 
       <section className="pb-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="Resizer mx-auto px-6 md:px-8">
           <div className="max-w-xl mb-14">
             <div className="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-red-500 mb-4"><span className="rec-dot" />Portfolio</div>
             <h2 className="font-display font-black text-3xl md:text-4xl text-navy">Recent work</h2>
@@ -135,7 +135,7 @@ export default function Home() {
       </section>
 
       <section className="pb-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="Resizer mx-auto px-6 md:px-8">
           <div className="max-w-xl mb-14">
             <div className="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-red-500 mb-4"><span className="rec-dot" />Testimonials</div>
             <h2 className="font-display font-black text-3xl md:text-4xl text-navy">What our clients say</h2>

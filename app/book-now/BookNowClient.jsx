@@ -25,7 +25,7 @@ export default function BookNowClient() {
     <>
       <PageBanner crumb="Book Now" title="Book Now" desc="Tell us what you need — a member of our team will confirm availability and follow up directly." />
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-8 grid lg:grid-cols-[0.9fr_1.4fr] gap-14">
+        <div className="Resizer mx-auto px-6 md:px-8 grid lg:grid-cols-[0.9fr_1.4fr] gap-14">
           <div>
             <div className="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-red-500 mb-4"><span className="rec-dot" />Quick Booking</div>
             <h2 className="font-display font-black text-2xl text-navy mb-4">Prefer to talk it through?</h2>

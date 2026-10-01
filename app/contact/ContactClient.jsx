@@ -24,7 +24,7 @@ export default function ContactClient() {
     <>
       <PageBanner crumb="Contact Us" title="Get In Touch" desc="Fill out the form and our team will get back to you within 24 hours. We're excited to discuss your project!" />
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-8 grid lg:grid-cols-[0.9fr_1.4fr] gap-14">
+        <div className="Resizer mx-auto px-6 md:px-8 grid lg:grid-cols-[0.9fr_1.4fr] gap-14">
           <div>
             <div className="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-red-500 mb-4"><span className="rec-dot" />Contact Info</div>
             <h2 className="font-display font-black text-2xl text-navy mb-7">Visit Our Studio</h2>
@@ -65,7 +65,7 @@ export default function ContactClient() {
         </div>
       </section>
       <section className="pb-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="Resizer mx-auto px-6 md:px-8">
           <div className="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-red-500 mb-4"><span className="rec-dot" />Find Us</div>
           <h2 className="font-display font-black text-3xl text-navy mb-3">Come see the studio</h2>
           <p className="text-navy-400 max-w-lg mb-8">Our studio is located in the heart of Ikeja, Lagos. Visit us at Onipetesi Estate to discuss your project and see our facilities firsthand.</p>

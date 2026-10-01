@@ -50,7 +50,7 @@ export default function PricingClient() {
     <>
       <PageBanner crumb="Rental Pricing" title="Transparent, per-session pricing" desc="No hidden fees. Discounted rates shown for bulk bookings and returning clients." />
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="Resizer mx-auto px-6 md:px-8">
           <div className="flex flex-wrap gap-3 mb-12">
             {CATEGORIES.map((c) => {
               const Icon = c.icon;
@@ -65,7 +65,7 @@ export default function PricingClient() {
         </div>
       </section>
       <section className="py-24 bg-paper-dim">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="Resizer mx-auto px-6 md:px-8">
           <SectionHead eyebrow="Important Pricing Information" title="What to know before you book" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[["Discounted Rates", "Available for bulk bookings and returning clients."], ["Session Duration", "Sessions are typically 2-4 hours depending on service."], ["Delivery Time", "Edited content delivered within 5-7 business days."], ["Booking Deposit", "50% deposit required to secure your booking."]].map(([title, desc]) => (
@@ -75,7 +75,7 @@ export default function PricingClient() {
         </div>
       </section>
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-8 grid sm:grid-cols-3 gap-8">
+        <div className="Resizer mx-auto px-6 md:px-8 grid sm:grid-cols-3 gap-8">
           {[["No Hidden Fees", "What you see is what you pay."], ["Premium Quality", "Professional results every time."], ["Flexible Packages", "Customizable to your needs."]].map(([title, desc]) => (
             <div key={title} className="border-t-2 border-navy pt-5"><h4 className="font-display font-extrabold text-navy text-lg mb-2">{title}</h4><p className="text-navy-400 text-sm">{desc}</p></div>
           ))}

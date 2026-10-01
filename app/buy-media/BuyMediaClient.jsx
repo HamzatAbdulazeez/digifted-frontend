@@ -42,7 +42,7 @@ export default function BuyMediaClient() {
     <>
       <PageBanner crumb="Buy Media" title="Buy Media" desc="Photo and video albums from real Digifted Hub sessions and events — pay once, get the password, open the full album." />
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="Resizer mx-auto px-6 md:px-8">
           {error && <p className="text-red-500 text-sm mb-8 bg-red-50 border border-red-200 rounded px-4 py-3">{error}</p>}
           {loading ? (
             <div className="flex justify-center py-20"><Loader2 className="animate-spin text-navy" size={28} /></div>

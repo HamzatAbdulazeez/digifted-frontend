@@ -4,10 +4,10 @@ import { Instagram, Youtube, Facebook, Twitter } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="bg-navy-700 text-white/65 text-[15.5px]">
-      <div className="max-w-7xl mx-auto px-6 md:px-8 pt-16 pb-8">
+      <div className="Resizer mx-auto px-6 md:px-8 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr_1fr_1fr] gap-10 pb-12 border-b border-white/10">
           <div>
-            <img src="/logo.png" alt="Digifted Hub" className="h-7 mb-4 brightness-0 invert" />
+            <img src="https://res.cloudinary.com/dz29guo7f/image/upload/v1790857330/logo-removebg-preview_n9hipi.png" alt="Digifted Hub"  className="h-16 mb-4 brightness-0 invert" />
             <p className="max-w-xs leading-relaxed">
               Lagos&apos; creative production powerhouse — studios, live events, corporate media, digital strategy and post-production under one roof.
             </p>

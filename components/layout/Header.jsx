@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown, Facebook, Instagram, Youtube, User } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
+import { Menu, X, ChevronDown, Facebook, Instagram, Youtube, User, LogOut } from "lucide-react";
 import api from "../../lib/apiClient";
 
 const SERVICES_MENU = [
@@ -23,8 +23,10 @@ const NAV = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [accountOpen, setAccountOpen] = useState(false);
   const [user, setUser] = useState(null);
   const pathname = usePathname();
+  const router = useRouter();
   const isActive = (href) => pathname === href;
 
   useEffect(() => {
@@ -32,6 +34,14 @@ export default function Header() {
   }, [pathname]);
 
   const dashboardHref = user?.role === "admin" ? "/admin/dashboard" : user?.role === "staff" ? "/staff/dashboard" : null;
+
+  async function handleLogout() {
+    await api.post("/auth/logout");
+    setUser(null);
+    setAccountOpen(false);
+    router.push("/");
+    router.refresh();
+  }
 
   return (
     <>
@@ -62,7 +72,7 @@ export default function Header() {
             {NAV.map((item) =>
               item.dropdown ? (
                 <div key={item.href} className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
-                  <button className={`flex items-center gap-1 px-4 py-2 rounded-md text-[15px] transition ${isActive(item.href) || servicesOpen ? "text-red-500" : "text-navy hover:text-red-500"}`}>
+                  <button className={`flex items-center gap-1 px-4 py-2 rounded-md text-[15px]  transition ${isActive(item.href) || servicesOpen ? "text-red-500" : "text-navy hover:text-red-500"}`}>
                     {item.label}
                     <ChevronDown size={15} className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
                   </button>
@@ -70,7 +80,7 @@ export default function Header() {
                     <div className="bg-white border border-black/10 rounded-lg shadow-card overflow-hidden">
                       {item.dropdown.map((d) => (
                         <Link key={d.href} href={d.href} className="flex flex-col gap-0.5 px-5 py-3 hover:bg-paper transition border-b border-black/5 last:border-0">
-                          <span className="text-[14.5px] text-navy">{d.label}</span>
+                          <span className="text-[14.5px]  text-navy">{d.label}</span>
                           <span className="text-[12.5px] text-navy-400">{d.desc}</span>
                         </Link>
                       ))}
@@ -86,10 +96,25 @@ export default function Header() {
           </div>
 
           <div className="flex items-center gap-2 md:gap-3">
-            {dashboardHref && (
-              <Link href={dashboardHref} className="hidden md:inline-flex items-center gap-1.5 text-sm  text-navy hover:text-red-500 transition">
-                <User size={15} /> Dashboard
-              </Link>
+            {user && (
+              <div className="relative hidden md:block" onMouseEnter={() => setAccountOpen(true)} onMouseLeave={() => setAccountOpen(false)}>
+                <button className="flex items-center gap-1.5 text-sm  text-navy hover:text-red-500 transition px-3 py-2">
+                  <User size={15} />
+                  {user.name?.split(" ")[0] || "Account"}
+                  <ChevronDown size={13} className={`transition-transform ${accountOpen ? "rotate-180" : ""}`} />
+                </button>
+                <div className={`absolute right-0 top-full pt-2 w-56 transition-all ${accountOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-1 pointer-events-none"}`}>
+                  <div className="bg-white border border-black/10 rounded-lg shadow-card overflow-hidden py-1">
+                    {dashboardHref && (
+                      <Link href={dashboardHref} className="block px-4 py-2.5 text-sm font-medium text-navy hover:bg-paper transition">Dashboard</Link>
+                    )}
+                    <Link href="/buy-media" className="block px-4 py-2.5 text-sm font-medium text-navy hover:bg-paper transition">My Albums</Link>
+                    <button onClick={handleLogout} className="w-full flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-red-500 hover:bg-paper transition text-left">
+                      <LogOut size={14} /> Log Out
+                    </button>
+                  </div>
+                </div>
+              </div>
             )}
             <Link href="/book-now" className="hidden md:inline-flex btn-navy">Book Now</Link>
             <Link href="/buy-media" className="hidden md:inline-flex btn-red">Buy Media</Link>
@@ -115,8 +140,11 @@ export default function Header() {
                 )}
               </div>
             ))}
-            {dashboardHref && (
-              <Link href={dashboardHref} onClick={() => setOpen(false)} className="block py-2.5 text-[15px]  text-navy">Dashboard</Link>
+            {user && (
+              <>
+                {dashboardHref && <Link href={dashboardHref} onClick={() => setOpen(false)} className="block py-2.5 text-[15px]  text-navy">Dashboard</Link>}
+                <button onClick={handleLogout} className="block py-2.5 text-[15px]  text-red-500 text-left w-full">Log Out</button>
+              </>
             )}
             <div className="flex gap-3 pt-4">
               <Link href="/book-now" onClick={() => setOpen(false)} className="btn-navy flex-1 justify-center">Book Now</Link>

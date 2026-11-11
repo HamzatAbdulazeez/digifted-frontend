@@ -4,7 +4,7 @@ import db from "../../../lib/db";
 import { getCurrentUser } from "../../../lib/auth";
 
 export async function POST(request) {
-  const user = getCurrentUser();
+  const user = await getCurrentUser();
   if (!user) {
     return NextResponse.json({ message: "You need to be logged in to buy media." }, { status: 401 });
   }
@@ -74,7 +74,7 @@ export async function POST(request) {
 }
 
 export async function GET() {
-  const user = getCurrentUser();
+  const user = await getCurrentUser();
   if (!user) return NextResponse.json({ message: "Unauthenticated." }, { status: 401 });
 
   const orders = db

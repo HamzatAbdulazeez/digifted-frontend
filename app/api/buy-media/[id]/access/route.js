@@ -2,8 +2,9 @@ import { NextResponse } from "next/server";
 import db from "../../../../../lib/db";
 import { getCurrentUser } from "../../../../../lib/auth";
 
-export async function GET(request, { params }) {
-  const user = getCurrentUser();
+export async function GET(request, ctx) {
+  const params = await ctx.params;
+  const user = await getCurrentUser();
   if (!user) return NextResponse.json({ message: "Unauthenticated." }, { status: 401 });
 
   const order = db

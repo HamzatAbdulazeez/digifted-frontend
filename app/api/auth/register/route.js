@@ -25,7 +25,7 @@ export async function POST(request) {
 
   const user = db.prepare("SELECT id, name, email, phone, role FROM users WHERE id = ?").get(result.lastInsertRowid);
   const token = signSession(user);
-  setSessionCookie(token);
+  await setSessionCookie(token);
 
   return NextResponse.json({ user }, { status: 201 });
 }

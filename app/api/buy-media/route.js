@@ -3,7 +3,7 @@ import db from "../../../lib/db";
 import { getCurrentUser } from "../../../lib/auth";
 
 export async function GET() {
-  const user = getCurrentUser();
+  const user = await getCurrentUser();
 
   const galleries = db
     .prepare(

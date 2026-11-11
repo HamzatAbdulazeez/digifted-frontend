@@ -2,8 +2,9 @@ import { NextResponse } from "next/server";
 import db from "../../../../../../lib/db";
 import { getCurrentUser, requireRole } from "../../../../../../lib/auth";
 
-export async function GET(request, { params }) {
-  const user = getCurrentUser();
+export async function GET(request, ctx) {
+  const params = await ctx.params;
+  const user = await getCurrentUser();
   if (!requireRole(user, ["staff", "admin"])) {
     return NextResponse.json({ message: "Staff access only." }, { status: 403 });
   }
@@ -12,8 +13,9 @@ export async function GET(request, { params }) {
   return NextResponse.json({ data: media });
 }
 
-export async function POST(request, { params }) {
-  const user = getCurrentUser();
+export async function POST(request, ctx) {
+  const params = await ctx.params;
+  const user = await getCurrentUser();
   if (!requireRole(user, ["staff", "admin"])) {
     return NextResponse.json({ message: "Staff access only." }, { status: 403 });
   }

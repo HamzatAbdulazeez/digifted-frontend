@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import db from "../../../../../lib/db";
 
-export async function POST(request, { params }) {
+export async function POST(request, ctx) {
+  const params = await ctx.params;
   const { password } = await request.json();
   const gallery = db.prepare("SELECT * FROM galleries WHERE id = ?").get(params.id);
 

@@ -10,7 +10,7 @@ export async function POST(request) {
     return NextResponse.json({ message: "Name and email are required." }, { status: 422 });
   }
 
-  const user = getCurrentUser();
+  const user = await getCurrentUser();
   const result = db
     .prepare(
       `INSERT INTO bookings (customerId, name, email, phone, department, preferredDate, message, status)
@@ -23,7 +23,7 @@ export async function POST(request) {
 }
 
 export async function GET() {
-  const user = getCurrentUser();
+  const user = await getCurrentUser();
   if (!requireRole(user, ["staff", "admin"])) {
     return NextResponse.json({ message: "Staff access only." }, { status: 403 });
   }

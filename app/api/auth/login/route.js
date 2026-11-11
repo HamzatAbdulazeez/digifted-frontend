@@ -16,7 +16,7 @@ export async function POST(request) {
   }
 
   const token = signSession(user);
-  setSessionCookie(token);
+  await setSessionCookie(token);
 
   delete user.password;
   return NextResponse.json({ user });

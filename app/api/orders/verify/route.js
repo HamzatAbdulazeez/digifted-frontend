@@ -3,7 +3,7 @@ import db from "../../../../lib/db";
 import { getCurrentUser } from "../../../../lib/auth";
 
 export async function POST(request) {
-  const user = getCurrentUser();
+  const user = await getCurrentUser();
   if (!user) return NextResponse.json({ message: "Unauthenticated." }, { status: 401 });
 
   const { reference } = await request.json();

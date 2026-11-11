@@ -2,7 +2,7 @@ const Database = require("better-sqlite3");
 const bcrypt = require("bcryptjs");
 const path = require("path");
 
-const db = new Database(path.join(process.cwd(), "dev.db"));
+const db = new Database(process.env.DATABASE_PATH || path.join(process.cwd(), "dev.db"));
 
 db.exec(`
   CREATE TABLE IF NOT EXISTS users (

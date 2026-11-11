@@ -10,7 +10,7 @@ function randomPassword() {
 }
 
 export async function GET() {
-  const user = getCurrentUser();
+  const user = await getCurrentUser();
   if (!requireRole(user, ["staff", "admin"])) {
     return NextResponse.json({ message: "Staff access only." }, { status: 403 });
   }
@@ -26,7 +26,7 @@ export async function GET() {
 }
 
 export async function POST(request) {
-  const user = getCurrentUser();
+  const user = await getCurrentUser();
   if (!requireRole(user, ["staff", "admin"])) {
     return NextResponse.json({ message: "Staff access only." }, { status: 403 });
   }
